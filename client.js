@@ -1,7 +1,7 @@
 const net = require('net');
 const connect = function () {
     const conn = net.createConnection({ 
-      host: 'localhost', //'192.168.168.104',
+    host: 'localhost',//   host: '192.168.168.104',
       port: 50541
     });
     // interpret incoming data as text
@@ -10,6 +10,10 @@ const connect = function () {
     conn.on('data', (data) => {
       console.log('Server says just before kicking: ', data);
       });
+      conn.on('connect', () => {
+        console.log('Successfully connected to game server');
+        conn.write("Name: AS8")
+        });
     return conn;
   }
 

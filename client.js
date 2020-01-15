@@ -10,10 +10,16 @@ const connect = function () {
     conn.on('data', (data) => {
       console.log('Server says just before kicking: ', data);
       });
-      conn.on('connect', () => {
+
+    conn.on('connect', () => {
         console.log('Successfully connected to game server');
-        conn.write("Name: AS8")
-        });
+        
+        // setTimeout(() => {conn.write("Move: up")},500);;
+        // setTimeout(() => {conn.write("Move: up")}, 1500);;
+        // setTimeout(() => {conn.write("Move: up")}, 2500);;
+        // setTimeout(() => {conn.write("Move: right")}, 3500);;
+        conn.write("Name: AS8");
+    });
     return conn;
   }
 

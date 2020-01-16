@@ -13,14 +13,9 @@ const connect = function () {
 
     conn.on('connect', () => {
         console.log('Successfully connected to game server');
-        
-        // setTimeout(() => {conn.write("Move: up")},500);;
-        // setTimeout(() => {conn.write("Move: up")}, 1500);;
-        // setTimeout(() => {conn.write("Move: up")}, 2500);;
-        // setTimeout(() => {conn.write("Move: right")}, 3500);;
         conn.write("Name: AS8");
     });
     return conn;
   }
-
+console.log(connect());
 module.exports = {connect}

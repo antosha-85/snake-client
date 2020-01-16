@@ -1,9 +1,10 @@
 const net = require('net');
+const { IP_local, IP_screen, port } = require('./constants');
 const connect = function () {
     const conn = net.createConnection({ 
     // host: 'localhost',//   
-    host: '192.168.168.104',
-      port: 50541
+    host: IP_local,
+      port: port
     });
     // interpret incoming data as text
     conn.setEncoding('utf8'); 
@@ -18,5 +19,5 @@ const connect = function () {
     });
     return conn;
   }
-console.log(connect());
+// console.log(connect());
 module.exports = {connect}

@@ -20,6 +20,10 @@ const setupInput = function(conn) {
             conn.write('Move: left')
         } else if (key === 'd') {
             conn.write('Move: right')
+        } else if (key === '1') {
+            conn.write('Say: whatsuppp')
+        } else if (key === '2') {
+            conn.write('Say: shiiiite')
         } else {
             console.log(`pressed a diff button!`);
         }
